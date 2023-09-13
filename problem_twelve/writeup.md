@@ -32,3 +32,11 @@ Non-magic, non-private methods:
 * text
 * url
 
+c. see `/problem_twelve.py`
+
+d. Experimented with various tree depths
+
+| Tree depth | Wikipedia articles | External articles | Time taken |
+| --- | --- | --- | --- |
+| 0 | |||
+| 1 | 950 | 2613 | 212 s|
