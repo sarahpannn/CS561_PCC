@@ -19,6 +19,8 @@ def get_links(url, i=0):
         external_link_list.extend(external_links)
         for link in wikipedia_links:
             if link not in explored:
+                if link[0] == "#":
+                    continue
                 if link[0] == "/":
                     link = "https://en.wikipedia.org/" + link
                 explored.append(link)
@@ -30,7 +32,7 @@ def get_links(url, i=0):
 def _filter_source(link_list):
     wikipedia_links, external_links = [], []
     for link in link_list:
-        if link[0] == "/" or "wiki" in link:
+        if link[0] == "/" or link[0] == "#" or "wiki" in link:
             wikipedia_links.append(link)
         else:
             external_links.append(link)
